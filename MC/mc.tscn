@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://duabama3kgrl"]
+
+[ext_resource type="Script" path="res://MC/body_temp.gd" id="1_15v4o"]
+[ext_resource type="Texture2D" uid="uid://p8m73p3b2ve2" path="res://MC/prototexture.png" id="1_fmnnk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tuf7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3y4h"]
+albedo_texture = ExtResource("1_fmnnk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_iy1l0"]
+lightmap_size_hint = Vector2i(15, 23)
+
+[node name="mc" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_15v4o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_4tuf7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+material_override = SubResource("StandardMaterial3D_u3y4h")
+mesh = SubResource("BoxMesh_iy1l0")

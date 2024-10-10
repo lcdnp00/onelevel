@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://1x7l3rckrmfg"]
+
+[ext_resource type="Script" path="res://camera/camera.gd" id="1_as0df"]
+[ext_resource type="Script" path="res://camera/Raycam.gd" id="2_j44ir"]
+
+[node name="camera" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.04155)
+script = ExtResource("1_as0df")
+
+[node name="cam_main" type="Camera3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Ray_center" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(0, 0, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_cen_right" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(2.5, 0, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_cen_left" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(-2.5, 0, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_cen_up" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(0, 2.5, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_cen_down" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(0, -2.5, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_ri_up" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(2.5, 2.5, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_ri_down" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(2.5, -2.5, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_le_up" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(-2.5, 2.5, -60)
+script = ExtResource("2_j44ir")
+
+[node name="Ray_le_down" type="RayCast3D" parent="cam_main"]
+target_position = Vector3(-2.5, -2.5, -60)
+script = ExtResource("2_j44ir")
